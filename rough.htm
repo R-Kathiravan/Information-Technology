@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITHUB | Technology & IT Services</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- 1. CORE VARIABLES (Based on ITHUB Theme) --- */
+        :root {
+            --primary: #3C72FC;
+            /* Vibrant Tech Blue */
+            --secondary: #0F172A;
+            /* Dark Navy */
+            --accent: #00D4FF;
+            /* Cyan Highlight */
+            --text-body: #64748b;
+            --text-heading: #0b0f19;
+            --light-bg: #F4F7FA;
+            --white: #ffffff;
+            --border: #E2E8F0;
+            --radius: 12px;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--text-body);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--text-heading);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- UTILS --- */
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 110px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 35px;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        .btn-white:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .sub-title {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(60, 114, 252, 0.1);
+            color: var(--primary);
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* --- 2. HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--secondary);
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '+';
+            position: absolute;
+            right: -15px;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* --- 3. HERO SECTION (Classic ITHUB Style) --- */
+        .hero {
+            position: relative;
+            padding: 200px 0 150px;
+            background: #04091E;
+            color: white;
+            background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(4, 9, 30, 0.95), rgba(4, 9, 30, 0.8));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.8;
+            margin-bottom: 50px;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        /* Floating Badge (25k+ Clients) */
+        .floating-badge {
+            position: absolute;
+            right: 10%;
+            bottom: 20%;
+            background: white;
+            color: var(--secondary);
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: float 5s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .badge-icon {
+            width: 60px;
+            height: 60px;
+            background: #FFE5D9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FF5722;
+            font-size: 1.5rem;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Brand Strip */
+        .brand-strip {
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            display: flex;
+            gap: 50px;
+            opacity: 0.6;
+            align-items: center;
+        }
+
+        .brand-strip img {
+            height: 30px;
+            filter: grayscale(1) brightness(2);
+            transition: 0.3s;
+        }
+
+        .brand-strip img:hover {
+            filter: none;
+            opacity: 1;
+        }
+
+
+        /* --- 4. ABOUT SECTION --- */
+        .about {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+        }
+
+        .img-main {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .img-float {
+            position: absolute;
+            bottom: -50px;
+            right: -30px;
+            border: 10px solid white;
+            border-radius: 20px;
+            width: 250px;
+            box-shadow: var(--shadow);
+        }
+
+        .exp-badge {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 800;
+            box-shadow: var(--shadow);
+        }
+
+        .exp-badge span {
+            font-size: 3rem;
+            line-height: 1;
+            display: block;
+        }
+
+        .quote-box {
+            background: var(--light-bg);
+            padding: 30px;
+            border-left: 5px solid var(--primary);
+            margin-top: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .quote-box p {
+            font-style: italic;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* --- 5. MARQUEE (Scrolling Text) --- */
+        .marquee {
+            background: var(--secondary);
+            padding: 25px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-flex;
+            animation: scroll 20s linear infinite;
+        }
+
+        .marquee-item {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: 0.3s;
+        }
+
+        .marquee-item:hover {
+            color: white;
+            -webkit-text-stroke: 0;
+        }
+
+        .marquee-item span {
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* --- 6. SERVICES (Numbered Cards) --- */
+        .services {
+            background: var(--light-bg);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            position: relative;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        /* Big Number Background */
+        .card-num {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--light-bg);
+            transition: 0.4s;
+            line-height: 1;
+            z-index: 1;
+        }
+
+        .service-card:hover .card-num {
+            color: rgba(60, 114, 252, 0.1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #EEF4FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+            transition: 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card p {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--secondary);
+            transition: 0.4s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card:hover .read-more {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: rotate(-45deg);
+        }
+
+        /* --- 7. PROCESS SECTION --- */
+        .process {
+            position: relative;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .step-num {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: inline-block;
+            background: #EEF4FF;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .step-item h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- 8. FOOTER --- */
+        footer {
+            background: #050a14;
+            color: #94a3b8;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .footer h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .gallery-img {
+            height: 70px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .img-float {
+                display: none;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container flex-between">
+            <a href="#" class="logo"><i class="fa-solid fa-cube"></i> ITHUB</a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Company</a></li>
+                    <li><a href="#" class="nav-link">IT Solutions</a></li>
+                    <li><a href="#" class="nav-link">Case Studies</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="#" class="btn">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="floating-badge">
+            <div class="badge-icon"><i class="fa-solid fa-users"></i></div>
+            <div>
+                <h3 style="color: #0b0f19; font-size: 1.8rem; margin:0;">25k+</h3>
+                <span style="color: #64748b; font-size: 0.9rem;">Satisfied Clients</span>
+            </div>
+        </div>
+
+        <div class="container hero-content" data-aos="fade-up">
+            <div
+                style="color: var(--accent); font-weight: 700; letter-spacing: 2px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                <span style="width: 30px; height: 2px; background: var(--accent);"></span> UNLEASH DIGITAL POTENTIAL
+            </div>
+            <h1>Delivering Tech Solutions For Your Startups</h1>
+            <p>We provide world-class IT infrastructure, cloud security, and 24/7 support so you can focus on growth.
+            </p>
+
+            <div style="display: flex; gap: 20px;">
+                <a href="#" class="btn">Discover More</a>
+                <a href="#" class="btn btn-white"><i class="fa-solid fa-play"></i> Watch Video</a>
+            </div>
+
+            <div class="brand-strip">
+                <span>TRUSTED BY:</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            <div class="marquee-item"><span></span> Strategy</div>
+            <div class="marquee-item"><span></span> Development</div>
+            <div class="marquee-item"><span></span> Cyber Security</div>
+            <div class="marquee-item"><span></span> AI Solutions</div>
+            <div class="marquee-item"><span></span> Cloud Computing</div>
+            <div class="marquee-item"><span></span> Strategy</div>
+            <div class="marquee-item"><span></span> Development</div>
+            <div class="marquee-item"><span></span> Cyber Security</div>
+        </div>
+    </div>
+
+    <section class="about section-padding">
+        <div class="container about-grid">
+            <div class="about-images" data-aos="fade-right">
+                <div class="img-main">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+                        alt="About Main">
+                </div>
+                <div class="img-float">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
+                        alt="Team">
+                </div>
+                <div class="exp-badge">
+                    <span>25</span> Years of<br>Experience
+                </div>
+            </div>
+
+            <div class="about-content" data-aos="fade-left">
+                <div class="sub-title">ABOUT ITHUB</div>
+                <h2 style="font-size: 3rem; margin-bottom: 20px;">Exclusive Technology to Provide IT Solutions</h2>
+                <p style="margin-bottom: 20px;">We help you digitalize your business workflows and increase revenue. Our
+                    expert team ensures your infrastructure is secure, scalable, and efficient.</p>
+
+                <ul style="margin-bottom: 30px;">
+                    <li
+                        style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--secondary);">
+                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Artificial Intelligence
+                        & Machine Learning
+                    </li>
+                    <li
+                        style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--secondary);">
+                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Cloud Database
+                        Management
+                    </li>
+                </ul>
+
+                <div class="quote-box">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                        <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: #E2E8F0;"></i>
+                        <div style="color: #FFB400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star-half-stroke"></i></div>
+                    </div>
+                    <p>"We love sharing our shortcuts and techniques with our consultancy teams, providing immense
+                        satisfaction to our clients."</p>
+                    <div style="margin-top: 15px; font-weight: 800; color: var(--secondary);">Julian Bray, CEO</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services section-padding">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <div class="sub-title">OUR SERVICES</div>
+                <h2 style="font-size: 3rem;">Services We're Offering</h2>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-num">01</div>
+                    <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>Strategic SEO, PPC, and Social Media campaigns to boost your brand visibility.</p>
+                    <a href="#" class="read-more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-num">02</div>
+                    <div class="service-icon"><i class="fa-brands fa-google"></i></div>
+                    <h3>Google Ads</h3>
+                    <p>High-converting ad campaigns optimized for maximum ROI and lead generation.</p>
+                    <a href="#" class="read-more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-num">03</div>
+                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with React, Node.js, and Python.</p>
+                    <a href="#" class="read-more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-num">04</div>
+                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>SEO Optimization</h3>
+                    <p>Rank higher on search engines with our technical and content-driven SEO strategies.</p>
+                    <a href="#" class="read-more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process section-padding">
+        <div class="container">
+            <div class="flex-between" style="flex-wrap: wrap; gap: 20px;">
+                <div style="max-width: 500px;" data-aos="fade-right">
+                    <div class="sub-title">WORK PROCESS</div>
+                    <h2 style="font-size: 2.5rem;">See the value in our IT consulting solutions</h2>
+                </div>
+                <a href="#" class="btn" data-aos="fade-left">Get Started</a>
+            </div>
+
+            <div class="process-steps">
+                <div class="step-item" data-aos="fade-up" data-aos-delay="100">
+                    <span class="step-num">Step 01</span>
+                    <h4>Discover</h4>
+                    <p>We analyze your needs.</p>
+                </div>
+                <div class="step-item" data-aos="fade-up" data-aos-delay="200">
+                    <span class="step-num">Step 02</span>
+                    <h4>Strategy</h4>
+                    <p>We build a custom roadmap.</p>
+                </div>
+                <div class="step-item" data-aos="fade-up" data-aos-delay="300">
+                    <span class="step-num">Step 03</span>
+                    <h4>Implementation</h4>
+                    <p>We deploy the solution.</p>
+                </div>
+                <div class="step-item" data-aos="fade-up" data-aos-delay="400">
+                    <span class="step-num">Step 04</span>
+                    <h4>Monitoring</h4>
+                    <p>We track progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo"><i class="fa-solid fa-cube"></i> ITHUB</a>
+                    <p>We prioritize collaboration with our clients to ensure their digital success. Reach out to us for
+                        any IT needs.</p>
+                    <div style="margin-top: 20px; color: white; font-weight: 700;">
+                        <div style="margin-bottom: 10px;"><i class="fa-solid fa-envelope"
+                                style="color: var(--primary);"></i> info@ithub.com</div>
+                        <div><i class="fa-solid fa-phone" style="color: var(--primary);"></i> +1 (123) 456 7890</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Cyber Security</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                        <li><a href="#">Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Gallery</h4>
+                    <div class="gallery-grid">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=150&q=80"
+                            class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=150&q=80"
+                            class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=150&q=80"
+                            class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80"
+                            class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=150&q=80"
+                            class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=150&q=80"
+                            class="gallery-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ITHUB Technology. All Rights Reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Sticky Header Script
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+
+</html>

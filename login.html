@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login || Information Technology</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Manrope:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Manrope:wght@300;500&family=Dancing+Script:wght@600&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700;800&family=Cinzel:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+
+    <style>
+        :root {
+            --primary: #3C72FC;
+            --secondary: #0F172A;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background-image: url('./assets/login-bg.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.85);
+            z-index: 0;
+        }
+
+        .auth-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+        }
+
+        .auth-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: white;
+            transition: 0.4s;
+            margin-top: 80px !important;
+        }
+
+        .form-logo {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            justify-self: center;
+            margin-left: 20px;
+        }
+
+        .auth-header p {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+
+        .input-group {
+            position: relative;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .input-field.success {
+            border-color: #2ecc71;
+        }
+
+        .input-field.error {
+            border-color: #e74c3c;
+            animation: shake 0.3s;
+        }
+
+        .error-msg {
+            color: #e74c3c;
+            font-size: 0.75rem;
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            visibility: hidden;
+            font-weight: 600;
+        }
+
+        .input-group.error .error-msg {
+            visibility: visible;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 14px 15px 14px 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 42px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .auth-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(60, 114, 252, 0.3);
+        }
+
+        .auth-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .auth-options a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .auth-options a:hover {
+            text-decoration: underline;
+        }
+
+        .switcher {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .switcher a {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .back-home {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            z-index: 10;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container flex-between">
+            <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <a href="Login.html" class="btn mobile-login">Login <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="btn-close"><span class="material-icons">close</span></div>
+                </ul>
+            </nav>
+            <a href="Login.html" class="btn login-btn">Login <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="hamburger">
+                <span class="material-icons">menu</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="auth-container">
+
+        <div id="login-form" class="auth-card fade-in">
+            <a href="index.html" class="form-logo">
+                <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="form-logo">
+            </a>
+            <div class="auth-header">
+                <h2 style="color: #ffffff;">Welcome Back</h2>
+                <p>Access your client dashboard.</p>
+            </div>
+
+            <form id="formLogin" onsubmit="handleLogin(event)" novalidate>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="login-email" class="input-field" placeholder="name@company.com">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="login-pass" class="input-field" placeholder="••••••••">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <div class="auth-options">
+                    <label><input type="checkbox"> Remember me</label>
+                    <!-- <a href="#">Forgot Password?</a> -->
+                </div>
+
+                <button type="submit" class="auth-btn">Sign In</button>
+            </form>
+
+            <div class="switcher">
+                Don't have an account? <a onclick="switchForm('signup')">Sign Up</a>
+            </div>
+        </div>
+
+        <div id="signup-form" class="auth-card hidden">
+            <a href="index.html" class="form-logo">
+                <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="form-logo">
+            </a>
+            <div class="auth-header">
+                <h2 style="color: #ffffff;">Create Account</h2>
+                <p>Start your digital journey with us.</p>
+            </div>
+
+            <form id="formSignup" onsubmit="handleSignup(event)" novalidate>
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="signup-name" class="input-field" placeholder="John Doe">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <div class="input-group">
+                    <label>Work Email</label>
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="signup-email" class="input-field" placeholder="name@company.com">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="signup-pass" class="input-field"
+                        placeholder="Create a password (min 6 chars)">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <button type="submit" class="auth-btn">Create Account</button>
+            </form>
+
+            <div class="switcher">
+                Already have an account? <a onclick="switchForm('login')">Sign In</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function switchForm(form) {
+            const login = document.getElementById('login-form');
+            const signup = document.getElementById('signup-form');
+
+            document.getElementById('formLogin').reset();
+            document.getElementById('formSignup').reset();
+            document.querySelectorAll('.input-group').forEach(group => group.classList.remove('error', 'success'));
+            document.querySelectorAll('.input-field').forEach(field => field.classList.remove('error', 'success'));
+
+            if (form === 'signup') {
+                login.classList.add('hidden');
+                signup.classList.remove('hidden');
+                signup.classList.add('fade-in');
+            } else {
+                signup.classList.add('hidden');
+                login.classList.remove('hidden');
+                login.classList.add('fade-in');
+            }
+        }
+
+        function showError(input, message) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            input.classList.remove('success');
+            input.classList.add('error');
+            formControl.classList.add('error');
+            small.innerText = message;
+        }
+
+        function showSuccess(input) {
+            const formControl = input.parentElement;
+            input.classList.remove('error');
+            input.classList.add('success');
+            formControl.classList.remove('error');
+        }
+
+        function isValidEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('login-email');
+            const pass = document.getElementById('login-pass');
+            let isValid = true;
+
+            if (email.value.trim() === '') {
+                showError(email, 'Email is required');
+                isValid = false;
+            } else if (!isValidEmail(email.value.trim())) {
+                showError(email, 'Email is not valid');
+                isValid = false;
+            } else {
+                showSuccess(email);
+            }
+
+            if (pass.value.trim() === '') {
+                showError(pass, 'Password is required');
+                isValid = false;
+            } else {
+                showSuccess(pass);
+            }
+
+            if (isValid) {
+                const btn = e.target.querySelector('button');
+                btn.innerText = "Authenticating...";
+                btn.style.opacity = "0.7";
+
+                setTimeout(() => {
+                    window.location.href = "404page.html";
+                }, 1500);
+            }
+        }
+
+        function handleSignup(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('signup-name');
+            const email = document.getElementById('signup-email');
+            const pass = document.getElementById('signup-pass');
+            let isValid = true;
+
+            if (name.value.trim() === '') {
+                showError(name, 'Full Name is required');
+                isValid = false;
+            } else {
+                showSuccess(name);
+            }
+
+            if (email.value.trim() === '') {
+                showError(email, 'Email is required');
+                isValid = false;
+            } else if (!isValidEmail(email.value.trim())) {
+                showError(email, 'Email is not valid');
+                isValid = false;
+            } else {
+                showSuccess(email);
+            }
+
+            if (pass.value.trim() === '') {
+                showError(pass, 'Password is required');
+                isValid = false;
+            } else if (pass.value.trim().length < 6) {
+                showError(pass, 'Password must be at least 6 characters');
+                isValid = false;
+            } else {
+                showSuccess(pass);
+            }
+
+            if (isValid) {
+                const btn = e.target.querySelector('button');
+                const originalText = btn.innerText;
+                btn.innerText = "Creating Account...";
+                btn.style.opacity = "0.7";
+
+                setTimeout(() => {
+                    alert("Account created! Redirecting to dashboard...");
+                    window.location.href = "404page.html";
+                }, 1000);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

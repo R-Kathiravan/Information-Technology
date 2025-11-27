@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home || Information Technology</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Manrope:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Manrope:wght@300;500&family=Dancing+Script:wght@600&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700;800&family=Cinzel:wght@400;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <header id="header">
+        <div class="container flex-between">
+            <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <a href="Login.html" class="btn mobile-login">Login <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="btn-close"><span class="material-icons">close</span></div>
+                </ul>
+            </nav>
+            <a href="Login.html" class="btn login-btn">Login <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="hamburger">
+                <span class="material-icons">menu</span>
+            </div>
+        </div>
+    </header>
+    <section class="hero">
+
+        <canvas id="particles-canvas"></canvas>
+
+        <img src="./assets/home-particals1.webp" class="shape shape-1" style="filter: invert(1);">
+        <img src="./assets/home-particals2.webp" class="shape shape-2" style="filter: invert(1);">
+        <img src="./assets/home-particals3.webp" class="shape shape-3" style="filter: invert(1);">
+
+        <div class="container hero-content">
+            <div
+                style="color: var(--accent); font-weight: 700; letter-spacing: 2px; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 10px;">
+                <span style="width: 30px; height: 2px; background: var(--accent);"></span>
+                <div class="typing-text">UNLEASH DIGITAL POTENTIAL</div>
+            </div>
+
+            <h1 data-aos="fade-up">Delivering Tech Solutions For Your Startups</h1>
+            <p data-aos="fade-up" data-aos-delay="100">We provide world-class IT infrastructure, cloud security, and
+                24/7 support so you can focus on growth.</p>
+
+            <div style="display: flex; gap: 20px;" data-aos="fade-up" data-aos-delay="200">
+                <a href="case-studies.html" class="btn">Discover More</a>
+                <a href="404page.html" class="btn btn-white"><i class="fa-solid fa-play"></i> Watch Video</a>
+            </div>
+
+            <div class="brand-strip" data-aos="fade-up" data-aos-delay="300">
+                <span>TRUSTED BY:</span>
+                <img src="./assets/home-company1.webp" alt="Google">
+                <img src="./assets/home-company2.webp" alt="IBM">
+                <img src="./assets/home-company3.webp" alt="Microsoft">
+                <img src="./assets/home-company4.webp" alt="Amazon">
+            </div>
+        </div>
+
+        <div class="floating-badge">
+            <div class="badge-icon"><i class="fa-solid fa-users"></i></div>
+            <div>
+                <h3 style="color: white; font-size: 1.8rem; margin:0;">25k+</h3>
+                <span style="color: #ccc; font-size: 0.9rem;">Satisfied Clients</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            <div class="marquee-item"><span></span> Strategy</div>
+            <div class="marquee-item"><span></span> Development</div>
+            <div class="marquee-item"><span></span> Cyber Security</div>
+            <div class="marquee-item"><span></span> AI Solutions</div>
+            <div class="marquee-item"><span></span> Cloud Computing</div>
+            <div class="marquee-item"><span></span> Strategy</div>
+            <div class="marquee-item"><span></span> Development</div>
+            <div class="marquee-item"><span></span> Cyber Security</div>
+        </div>
+    </div>
+
+    <section class="about section-padding">
+        <div class="container about-grid">
+            <div class="about-images" data-aos="fade-right">
+                <div class="img-main">
+                    <img src="./assets/home-about2.webp" alt="About Main">
+                </div>
+                <div class="img-float">
+                    <img src="./assets/home-about1.webp" alt="Team">
+                </div>
+                <div class="exp-badge">
+                    <span>25</span> Years of<br>Experience
+                </div>
+            </div>
+
+            <div class="about-content" data-aos="fade-left">
+                <div class="sub-title">ABOUT Stackly</div>
+                <h2 style="font-size: 3rem; margin-bottom: 20px;">Exclusive Technology to Provide IT Solutions</h2>
+                <p style="margin-bottom: 20px;">We help you digitalize your business workflows and increase revenue. Our
+                    expert team ensures your infrastructure is secure, scalable, and efficient.</p>
+
+                <ul style="margin-bottom: 30px;">
+                    <li
+                        style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--secondary);">
+                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Artificial Intelligence
+                        & Machine Learning
+                    </li>
+                    <li
+                        style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--secondary);">
+                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Cloud Database
+                        Management
+                    </li>
+                </ul>
+
+                <div class="quote-box">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                        <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: #E2E8F0;"></i>
+                        <div style="color: #FFB400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star-half-stroke"></i></div>
+                    </div>
+                    <p>"We love sharing our shortcuts and techniques with our consultancy teams, providing immense
+                        satisfaction to our clients."</p>
+                    <div style="margin-top: 15px; font-weight: 800; color: var(--secondary);">Julian Bray, CEO</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services section-padding">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <div class="sub-title">OUR SERVICES</div>
+                <h2 style="font-size: 3rem;">Services We're Offering</h2>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-num">01</div>
+                    <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>Strategic SEO, PPC, and Social Media campaigns to boost your brand visibility.</p>
+                    <a href="404page.html" class="read-more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-num">02</div>
+                    <div class="service-icon"><i class="fa-brands fa-google"></i></div>
+                    <h3>Google Ads</h3>
+                    <p>High-converting ad campaigns optimized for maximum ROI and lead generation.</p>
+                    <a href="404page.html" class="read-more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-num">03</div>
+                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with React, Node.js, and Python.</p>
+                    <a href="404page.html" class="read-more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-num">04</div>
+                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>SEO Optimization</h3>
+                    <p>Rank higher on search engines with our technical and content-driven SEO strategies.</p>
+                    <a href="404page.html" class="read-more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-sec section-padding">
+        <div class="container">
+            <div class="sec-header" data-aos="fade-up">
+                <span>Recent Work</span>
+                <h2>Featured Projects</h2>
+            </div>
+            <div class="project-grid">
+                <div class="project-item" data-aos="zoom-in">
+                    <img src="./assets/home-project1.webp" class="project-img" alt="Project">
+                    <div class="project-overlay">
+                        <div class="project-cat">FinTech</div>
+                        <div class="project-title">Bank Security Upgrade</div>
+                    </div>
+                </div>
+                <div class="project-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./assets/home-project2.webp" class="project-img" alt="Project">
+                    <div class="project-overlay">
+                        <div class="project-cat">Healthcare</div>
+                        <div class="project-title">Cloud Data Migration</div>
+                    </div>
+                </div>
+                <div class="project-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="./assets/home-project3.webp" class="project-img" alt="Project">
+                    <div class="project-overlay">
+                        <div class="project-cat">E-Commerce</div>
+                        <div class="project-title">Platform Optimization</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="process-sec section-padding">
+        <div class="container">
+            <div class="sec-header" data-aos="fade-up">
+                <span>Workflow</span>
+                <h2>How We Deliver Success</h2>
+            </div>
+            <div class="grid-3">
+                <div class="process-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="step-num">01</span>
+                    <i class="fa-solid fa-magnifying-glass process-icon"></i>
+                    <h3>Discovery</h3>
+                    <p style="color:#666; font-size:0.9rem;">We analyze your current infrastructure and identify gaps.
+                    </p>
+                </div>
+                <div class="process-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="step-num">02</span>
+                    <i class="fa-solid fa-pen-ruler process-icon"></i>
+                    <h3>Strategy</h3>
+                    <p style="color:#666; font-size:0.9rem;">We design a custom roadmap tailored to your business goals.
+                    </p>
+                </div>
+                <div class="process-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="step-num">03</span>
+                    <i class="fa-solid fa-rocket process-icon"></i>
+                    <h3>Execution</h3>
+                    <p style="color:#666; font-size:0.9rem;">Our experts implement the solution with minimal downtime.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="container">
+            <div class="sec-header">
+                <span style="color: var(--accent);">Testimonials</span>
+                <h2 style="color: white;">Client Success Stories</h2>
+            </div>
+            <div class="grid-3">
+                <div class="testi-card" data-aos="fade-up">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="testi-text">"Nexus transformed our IT infrastructure. We haven't had a single minute of
+                        downtime since switching to their managed services."</p>
+                    <div class="client-info">
+                        <img src="./assets/person1.webp" class="client-img">
+                        <div>
+                            <h4>James Carter</h4>
+                            <span style="font-size: 0.8rem; color: #ccc;">CEO, TechFlow</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="testi-text">"Their cybersecurity team is top-notch. They identified vulnerabilities we
+                        didn't even know existed. Highly recommended."</p>
+                    <div class="client-info">
+                        <img src="./assets/person2.webp" class="client-img">
+                        <div>
+                            <h4>Sarah Jenkins</h4>
+                            <span style="font-size: 0.8rem; color: #ccc;">CTO, HealthPlus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="testi-text">"The best decision we made was outsourcing our helpdesk to Nexus. Our
+                        employees are happier and more productive."</p>
+                    <div class="client-info">
+                        <img src="./assets/person3.webp" class="client-img">
+                        <div>
+                            <h4>Michael Ross</h4>
+                            <span style="font-size: 0.8rem; color: #ccc;">Director, Urban Logistics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="team-sec section-padding">
+        <div class="container">
+            <div class="sec-header" data-aos="fade-up">
+                <span>Our Team</span>
+                <h2>Meet the Experts</h2>
+            </div>
+            <div class="grid-3">
+                <div class="team-card" data-aos="fade-up">
+                    <div class="team-img-wrapper">
+                        <img src="./assets/about-team1.webp" class="team-img">
+                        <div class="social-overlay">
+                            <a href="404page.html"><i class="fa-brands fa-linkedin"
+                                    style="color: #0077b5; font-size: 1.2rem;"></i></a>
+                            <a href="404page.html"> <i class="fa-brands fa-twitter"
+                                    style="color: #1da1f2; font-size: 1.2rem;"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>David Smith</h3>
+                        <span>Senior Network Engineer</span>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-img-wrapper">
+                        <img src="./assets/about-team3.webp" class="team-img">
+                        <div class="social-overlay">
+                            <a href="404page.html"><i class="fa-brands fa-linkedin"
+                                    style="color: #0077b5; font-size: 1.2rem;"></i></a>
+                            <a href="404page.html"> <i class="fa-brands fa-twitter"
+                                    style="color: #1da1f2; font-size: 1.2rem;"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Emily Chen</h3>
+                        <span>Lead Developer</span>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-img-wrapper">
+                        <img src="./assets/about-team2.webp" class="team-img">
+                        <div class="social-overlay">
+                            <a href="404page.html"><i class="fa-brands fa-linkedin"
+                                    style="color: #0077b5; font-size: 1.2rem;"></i></a>
+                            <a href="404page.html"> <i class="fa-brands fa-twitter"
+                                    style="color: #1da1f2; font-size: 1.2rem;"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Mark Johnson</h3>
+                        <span>Cyber Security Analyst</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact-cta section-padding">
+        <div class="container">
+            <div class="cta-box" data-aos="zoom-in">
+                <div>
+                    <h2 style="font-size: 2.2rem; margin-bottom: 10px;">Ready to Upgrade Your IT?</h2>
+                    <p style="opacity: 0.9;">Contact us today for a free consultation and network audit.</p>
+                </div>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container footer-wrapper">
+
+            <div class="footer-col" data-aos="fade-left">
+                <a href="index.html">
+                    <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo">
+                </a>
+                <p>We deliver enterprise-grade technology solutions for businesses of all sizes. Secure, scalable, and
+                    always supported.</p>
+
+                <div class="footer-socials" data-aos="fade-up">
+                    <a href="404page.html"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="404page.html"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="404page.html"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col" data-aos="fade-right">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="404page.html">Managed IT</a></li>
+                    <li><a href="404page.html">Cloud Solutions</a></li>
+                    <li><a href="404page.html">Cyber Security</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col" data-aos="fade-left">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col" data-aos="fade-right">
+                <h4>Newsletter</h4>
+                <p>Subscribe for the latest tech news.</p>
+                <div class="newsletter">
+                    <input type="text" placeholder="Email Address">
+                    <button><i class="fa-solid fa-paper-plane"></i></button><br>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Stackly IT Solutions. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 50 });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray;
+
+        // Create Particle
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.directionX = (Math.random() * 0.4) - 0.2; // Slow speed
+                this.directionY = (Math.random() * 0.4) - 0.2;
+                this.size = Math.random() * 3 + 1;
+                this.color = '#3C72FC';
+            }
+            // Draw
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = '#3C72FC';
+                ctx.globalAlpha = 0.6;
+                ctx.fill();
+            }
+            // Update
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        // Initialize
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 15000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        // Connect lines
+        function connect() {
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                        + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+
+                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                        ctx.strokeStyle = 'rgba(60, 114, 252, 0.1)';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        init();
+        animate();
+
+        // Resize Event
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+    </script>
+</body>
+
+</html>
