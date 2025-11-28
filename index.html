@@ -32,7 +32,17 @@
             <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <div class="home-nav">
+                        <a href="index.html" class="home-btn nav-link">Home</a>
+
+                        <span class="material-icons dropdown-icon" id="homeDropdownBtn">
+                            expand_more
+                        </span>
+
+                        <div class="home-select " id="homeDropdown">
+                            <a href="./homepage2/index.html" class="nav-link">Home Page 2</a>
+                        </div>
+                    </div>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
@@ -441,7 +451,6 @@
     <script>
         AOS.init({ duration: 800, offset: 50 });
 
-        // Sticky Header
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
@@ -454,17 +463,15 @@
 
         let particlesArray;
 
-        // Create Particle
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.directionX = (Math.random() * 0.4) - 0.2; // Slow speed
+                this.directionX = (Math.random() * 0.4) - 0.2;  
                 this.directionY = (Math.random() * 0.4) - 0.2;
                 this.size = Math.random() * 3 + 1;
                 this.color = '#3C72FC';
             }
-            // Draw
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
@@ -472,7 +479,6 @@
                 ctx.globalAlpha = 0.6;
                 ctx.fill();
             }
-            // Update
             update() {
                 if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
                 if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
@@ -482,7 +488,6 @@
             }
         }
 
-        // Initialize
         function init() {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 15000;
@@ -491,7 +496,6 @@
             }
         }
 
-        // Connect lines
         function connect() {
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
@@ -510,7 +514,6 @@
             }
         }
 
-        // Animation Loop
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -524,11 +527,24 @@
         init();
         animate();
 
-        // Resize Event
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             init();
+        });
+        const homeDropdownBtn = document.getElementById("homeDropdownBtn");
+        const homeDropdown = document.getElementById("homeDropdown");
+        const icon = document.querySelector(".dropdown-icon");
+
+        homeDropdownBtn.addEventListener("click", () => {
+            homeDropdown.classList.toggle("show");
+            icon.classList.toggle("rotate");
+        });
+        document.addEventListener("click", (e) => {
+            if (!homeDropdown.contains(e.target) && !homeDropdownBtn.contains(e.target)) {
+                homeDropdown.classList.remove("show");
+                icon.classList.remove("rotate");
+            }
         });
     </script>
 </body>
