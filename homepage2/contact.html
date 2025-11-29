@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact || Information Technology</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+    <link href="contact.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="dev-theme">
+
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+            <nav class="nav-menu">
+                <li class="nav-item"> <a href="index.html" class="home-btn nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"> About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Work</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                <a href="login.html" class="btn mobile-login btn-outline">Login <i
+                        class="fa-solid fa-arrow-right"></i></a>
+                <div class="btn-close"><span class="material-icons">close</span></div>
+            </nav>
+            <div class="hamburger"><span class="fa-solid fa-bars"></span></div>
+        </div>
+        </div>
+    </header>
+    <section class="page-header">
+        <div class="grid-overlay"></div>
+        <div class="container text-center hero-content">
+            <div class="code-badge"><i class="fa-solid fa-satellite-dish"></i> Uplink Active</div>
+            <h1 data-aos="fade-up">Initialize <span class="gradient-text">Connection</span></h1>
+            <p class="mono-text hero-subtext"><i class="fa-solid fa-terminal"></i> Direct line to our engineering core.
+            </p>
+        </div>
+    </section>
+    <section class="section-padding">
+        <div class="container grid-3">
+
+            <div class="dev-card" data-aos="fade-up">
+                <i class="fa-solid fa-comments tech-card-icon primary"></i>
+                <h3>General Inquiries</h3>
+                <p class="muted">For partnership opportunities and general questions.</p>
+                <a href="mailto:info@thestackly.com" class="link-arrow">info@thestackly.com</a>
+            </div>
+
+            <div class="dev-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-headset tech-card-icon secondary"></i>
+                <h3>Technical Support</h3>
+                <p class="muted">Existing clients requiring immediate help.</p>
+                <a href="mailto:stackly@gmail.com" class="link-arrow">stackly@gmail.com</a>
+            </div>
+
+            <div class="dev-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-shield-halved tech-card-icon blue"></i>
+                <h3>Secure Comms</h3>
+                <p class="muted">PGP encrypted channel for sensitive information.</p>
+                <a href="404page.html" class="link-arrow">View Public Key</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="section-padding bg-card">
+        <div class="container">
+            <div class="sec-header">
+                <span class="mono-text muted"><i class="fa-solid fa-terminal"></i> FAST CONTACT</span>
+                <h2>Instant Communication</h2>
+            </div>
+
+            <div class="grid-3">
+
+                <div class="contact-box">
+                    <i class="fa-solid fa-phone-volume contact-icon"></i>
+                    <h3>Call Us</h3>
+                    <p class="muted">Available 10am – 7pm IST</p>
+                    <a href="tel:+919876543210" class="contact-btn">+91 98765 43210</a>
+                </div>
+
+                <div class="contact-box">
+                    <i class="fa-brands fa-whatsapp contact-icon green"></i>
+                    <h3>WhatsApp Support</h3>
+                    <p class="muted">Quick replies for active clients</p>
+                    <a href="https://wa.me/919876543210" class="contact-btn">Chat Now</a>
+                </div>
+
+                <div class="contact-box">
+                    <i class="fa-solid fa-envelope contact-icon orange"></i>
+                    <h3>Email Support</h3>
+                    <p class="muted">24×7 response window</p>
+                    <a href="mailto:info@thestackly.com" class="contact-btn">Send Email</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-padding bg-card">
+        <div class="container form-container">
+
+            <div class="sec-header">
+                <span class="mono-text muted"><i class="fa-solid fa-terminal"></i> TRANSMISSION</span>
+                <h2>Start Project</h2>
+            </div>
+
+            <div class="dev-card" data-aos="fade-up">
+
+                <form id="contactForm" novalidate>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label class="mono-text muted small">FULL NAME</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Doe">
+                            <small class="error"></small>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="mono-text muted small">EMAIL</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@company.com">
+                            <small class="error"></small>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="mono-text muted small">PROJECT TYPE</label>
+                        <select id="projectType" class="form-control">
+                            <option value="">Select a Project Type</option>
+                            <option>New Software Development</option>
+                            <option>AI Integration</option>
+                            <option>Mobile App</option>
+                            <option>Cloud Infrastructure</option>
+                        </select>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="mono-text muted small">MESSAGE</label>
+                        <textarea id="message" class="form-control" rows="5"
+                            placeholder="Tell us about your stack..."></textarea>
+                        <small class="error"></small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-btn">Send Transmission</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="sec-header">
+                <span class="mono-text muted"><i class="fa-solid fa-terminal"></i> LOCATION</span>
+                <h2>Find Us on the Map</h2>
+            </div>
+
+            <div class="map-box">
+                <iframe class="map-frame"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.9146091054317!2d78.17140487467015!3d11.682956588526352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e1!3m2!1sen!2sin!4v1763108035474!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p class="footer-tagline">Building the digital future, one commit at a time.</p>
+                </div>
+
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Stack</h4>
+                    <ul class="footer-links">
+                        <li><a href="404page.html">React / Next.js</a></li>
+                        <li><a href="404page.html">Node.js / Nest</a></li>
+                        <li><a href="404page.html">Python / Django</a></li>
+                        <li><a href="404page.html">Angular / ASP.NET</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Work</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="500">
+                    <h4>Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="xyz@email.com">
+                        <button class="newsletter-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Stackly. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+        AOS.init({ duration: 800, offset: 50, once: true });
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.8)';
+            }
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            const nameEl = document.getElementById('name');
+            const emailEl = document.getElementById('email');
+            const projectTypeEl = document.getElementById('projectType');
+            const messageEl = document.getElementById('message');
+
+            const inputs = [nameEl, emailEl, projectTypeEl, messageEl];
+
+            const validators = {
+                name: (v) => v.trim().length >= 2,
+                email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+                projectType: (v) => v.trim().length > 0,
+                message: (v) => v.trim().length >= 10
+            };
+
+            function showError(el, msg) {
+                const group = el.closest('.input-group') || el.parentElement;
+                const small = group.querySelector('small.error');
+                if (small) small.textContent = msg;
+                el.classList.remove('valid');
+                el.classList.add('invalid');
+                el.setAttribute('aria-invalid', 'true');
+                if (small) small.setAttribute('role', 'alert');
+            }
+
+            function showSuccess(el) {
+                const group = el.closest('.input-group') || el.parentElement;
+                const small = group.querySelector('small.error');
+                if (small) small.textContent = '';
+                el.classList.remove('invalid');
+                el.classList.add('valid');
+                el.setAttribute('aria-invalid', 'false');
+            }
+
+            function validateField(el) {
+                const id = el.id;
+                const val = el.value || '';
+                let ok = true;
+                if (id === 'name') ok = validators.name(val);
+                else if (id === 'email') ok = validators.email(val);
+                else if (id === 'projectType') ok = validators.projectType(val);
+                else if (id === 'message') ok = validators.message(val);
+
+                if (!ok) {
+                    if (id === 'name') showError(el, 'Please enter your name (2+ characters).');
+                    if (id === 'email') showError(el, 'Please enter a valid email address.');
+                    if (id === 'projectType') showError(el, 'Please choose a project type.');
+                    if (id === 'message') showError(el, 'Please enter a message (10+ characters).');
+                } else {
+                    showSuccess(el);
+                }
+                return ok;
+            }
+
+            nameEl.addEventListener('input', () => validateField(nameEl));
+            emailEl.addEventListener('input', () => validateField(emailEl));
+            messageEl.addEventListener('input', () => validateField(messageEl));
+            projectTypeEl.addEventListener('change', () => validateField(projectTypeEl));
+
+            inputs.forEach(i => i.addEventListener('blur', () => validateField(i)));
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                let formValid = true;
+                inputs.forEach(i => {
+                    const ok = validateField(i);
+                    if (!ok) formValid = false;
+                });
+
+                if (!formValid) {
+                    const firstInvalid = document.querySelector('.form-control.invalid');
+                    if (firstInvalid) firstInvalid.focus();
+                    return;
+                }
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                setTimeout(() => {
+                    const successEl = document.createElement('div');
+                    successEl.className = 'form-success';
+                    successEl.textContent = 'Message sent! Our team will reach out within 24 hours.';
+                    form.prepend(successEl);
+                    successEl.style.display = 'block';
+                    window.location.href = '404page.html';
+
+                    form.reset();
+                    inputs.forEach(i => i.classList.remove('valid'));
+
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Transmission';
+
+                    setTimeout(() => {
+                        successEl.style.display = 'none';
+                    }, 6000);
+                }, 900);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

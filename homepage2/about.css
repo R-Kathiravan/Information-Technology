@@ -1,0 +1,211 @@
+ .bg-card {
+     background-color: var(--bg-card);
+ }
+
+ .philosophy-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 60px;
+     align-items: center;
+ }
+
+ .philosophy-stats {
+     margin-top: 40px;
+     display: flex;
+     gap: 40px;
+ }
+
+ .stat-large {
+     font-family: var(--font-code);
+     font-size: 2.5rem;
+     margin-bottom: 5px;
+ }
+
+ .team-image-style {
+     border-radius: 8px;
+     border: 1px solid var(--border);
+     opacity: 0.8;
+ }
+
+ .version-text {
+     font-family: var(--font-code);
+     font-size: 1.2rem;
+     font-weight: 700;
+ }
+
+ .story-title {
+     margin: 10px 0;
+ }
+
+ .award-card {
+     text-align: center;
+ }
+
+ .award-icon {
+     font-size: 3rem;
+     margin-bottom: 20px;
+ }
+
+ .award-gold {
+     color: #FFD700;
+ }
+
+ .award-silver {
+     color: #C0C0C0;
+ }
+
+ .award-bronze {
+     color: #CD7F32;
+ }
+
+ .award-desc {
+     color: var(--text-muted);
+     font-size: 0.8rem;
+ }
+
+ .leader-card {
+     padding: 0;
+     border: none;
+     background: transparent;
+     overflow: hidden;
+ }
+
+ .leader-img-box {
+     position: relative;
+     overflow: hidden;
+     border-radius: 8px;
+ }
+
+ .leader-img {
+     width: 100%;
+     filter: grayscale(100%);
+     transition: 0.3s;
+ }
+
+ .leader-card:hover .leader-img {
+     filter: grayscale(0);
+ }
+
+ .leader-info {
+     margin-top: 20px;
+ }
+
+ .leader-name {
+     margin-bottom: 5px;
+     font-size: 1.5rem;
+ }
+
+ .leader-role {
+     font-size: 0.9rem;
+ }
+
+ .culture-header {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 50px;
+     align-items: flex-end;
+     flex-wrap: wrap;
+ }
+
+ .culture-grid {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 20px;
+     text-align: center;
+ }
+
+ .culture-num {
+     font-size: 2.5rem;
+ }
+
+ .culture-label {
+     font-size: 0.8rem;
+     color: var(--text-muted);
+ }
+
+ .partners-wrapper {
+     display: flex;
+     justify-content: center;
+     gap: 50px;
+     flex-wrap: wrap;
+     opacity: 0.7;
+ }
+
+ .partner-icon {
+     font-size: 4rem;
+     color: var(--text-muted);
+     transition: 0.3s;
+ }
+
+ .partner-icon:hover {
+     opacity: 1;
+ }
+
+ .partner-icon.aws:hover {
+     color: #FF9900;
+ }
+
+ .partner-icon.google:hover {
+     color: #4285F4;
+ }
+
+ .partner-icon.stripe:hover {
+     color: #635BFF;
+ }
+
+ .partner-icon.github:hover {
+     color: #ffffff;
+ }
+
+ .values-config-text {
+     color: var(--text-muted);
+     text-align: right;
+ }
+
+ .value-icon {
+     font-size: 2rem;
+     color: #fff;
+     margin-bottom: 20px;
+ }
+
+ .cta-bg-image {
+     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+         url('./assets/about-cta.webp');
+     background-size: cover;
+     background-attachment: fixed;
+     text-align: center;
+ }
+
+ .cta-heading {
+     font-size: 3rem;
+     margin-bottom: 20px;
+ }
+
+ .cta-subtext {
+     color: #ccc;
+     font-size: 1.2rem;
+     max-width: 600px;
+     margin: 0 auto 40px;
+     line-height: 1.7;
+ }
+
+ .cta-buttons {
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+ }
+
+ @media (max-width: 992px) {
+     .philosophy-grid {
+         grid-template-columns: 1fr;
+         gap: 40px;
+     }
+
+     .culture-grid {
+         grid-template-columns: 1fr 1fr;
+     }
+
+     .cta-heading {
+         font-size: 2.5rem;
+     }
+ }

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home || Information Technology</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="dev-theme">
+
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+            <nav class="nav-menu">
+                <div class="home-nav">
+                    <li class="nav-item"> <a href="index.html" class="home-btn nav-link active">Home</a></li>
+                    <span class="material-icons dropdown-icon" id="homeDropdownBtn">expand_more</span>
+                    <div class="home-select " id="homeDropdown">
+                        <li class="nav-item"> <a href="../index.html" class="nav-link">Homepage 1</a></li>
+                    </div>
+                </div>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Work</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <a href="login.html" class="btn mobile-login btn-outline">Login <i
+                        class="fa-solid fa-arrow-right"></i></a>
+                <div class="btn-close"><span class="material-icons">close</span></div>
+            </nav>
+            <div class="hamburger"><span class="fa-solid fa-bars"></span></div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="grid-overlay"></div>
+        <div class="container hero-content">
+            <div class="code-badge" data-aos="fade-down">
+                <i class="fa-solid fa-terminal"></i> System Online: v3.0
+            </div>
+
+            <h1 data-aos="fade-up">Architecting The <span class="gradient-text">Future</span><br>Of Software.</h1>
+            <p data-aos="fade-up" data-aos-delay="100">We build high-performance digital products for ambitious
+                startups. Specializing in AI, Cloud Architecture, and Scalable Systems.</p>
+
+            <div class="hero-btns" data-aos="fade-up" data-aos-delay="200">
+                <a href="contact.html" class="btn btn-primary">Initialize Project_</a>
+                <a href="projects.html" class="btn btn-outline">View Github <i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="brand-strip-item"><i class="fab fa-react brand-fa-icon"></i> REACT NATIVE</span>
+            <span class="brand-strip-item"><i class="fab fa-node-js brand-fa-icon"></i> NODE.JS SYSTEM</span>
+            <span class="brand-strip-item"><i class="fab fa-python brand-fa-icon"></i> PYTHON AI</span>
+            <span class="brand-strip-item"><i class="fab fa-aws brand-fa-icon"></i> AWS INFRASTRUCTURE</span>
+            <span class="brand-strip-item"><i class="fab fa-docker brand-fa-icon"></i> DOCKER CONTAINERS</span>
+            <span class="brand-strip-item"><i class="fas fa-leaf brand-fa-icon"></i> MONGODB CLUSTER</span>
+            <span class="brand-strip-item"><i class="fab fa-react brand-fa-icon"></i> REACT NATIVE</span>
+            <span class="brand-strip-item"><i class="fab fa-node-js brand-fa-icon"></i> NODE.JS SYSTEM</span>
+            <span class="brand-strip-item"><i class="fab fa-python brand-fa-icon"></i> PYTHON AI</span>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="sec-header">
+                <span><i class="fa-solid fa-terminal"></i> CAPABILITIES</span>
+                <h2>Core Engineering</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="tech-card" data-aos="fade-up">
+                    <i class="fa-solid fa-layer-group tech-card-icon"></i>
+                    <h4>SaaS Platforms</h4>
+                    <p class="step-desc">Multi-tenant architectures designed for massive scale and reliability.</p>
+                </div>
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-mobile-screen-button tech-card-icon"></i>
+                    <h4>Native Mobile</h4>
+                    <p class="step-desc">High-performance iOS and Android apps using Flutter and React Native.</p>
+                </div>
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-brain tech-card-icon"></i>
+                    <h4>AI Integration</h4>
+                    <p class="step-desc">Embedding LLMs and predictive models into business logic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-dark-section">
+        <div class="container">
+            <div class="sec-header">
+                <span><i class="fa-solid fa-terminal"></i> SHIP LOGS</span>
+                <h2>Recent Deployments</h2>
+            </div>
+
+            <div class="project-list-layout">
+                <div class="work-item work-grid" data-aos="fade-right">
+                    <div class="work-img">
+                        <img src="./assets/hero-project.webp" alt="Code" class="work-img-style">
+                    </div>
+                    <div class="work-info">
+                        <span class="code-badge code-badge-mb">FinTech</span>
+                        <h3 class="project-title">Crypto Trading Engine</h3>
+                        <p class="project-desc">High-frequency trading platform handling $50M daily volume with <span
+                                class="text-highlight">0.05ms</span> latency.</p>
+                        <a href="projects.html" class="project-link">View
+                            Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="work-item work-grid" data-aos="fade-left">
+                    <div class="work-info text-right-aligned">
+                        <span class="code-badge code-badge-mb">HealthTech</span>
+                        <h3 class="project-title">AI Diagnostic Tool</h3>
+                        <p class="project-desc">Computer vision model for early detection, achieving <span
+                                class="text-highlight">99.8%</span> accuracy in clinical trials.</p>
+                        <a href="projects.html" class="project-link">View
+                            Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="work-img order-last">
+                        <img src="./assets/home-project2.webp" alt="Health" class="work-img-style">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid-dev">
+                <div class="stat-box-dev">
+                    <h3 class="counter" data-target="98" data-display="98">0</h3>
+                    <p>NPS Score</p>
+                </div>
+                <div class="stat-box-dev">
+                    <h3 class="counter" data-target="1500000" data-display="1.5M+">0</h3>
+                    <p>Lines of Code</p>
+                </div>
+                <div class="stat-box-dev">
+                    <h3 class="counter" data-target="45" data-display="45">0</h3>
+                    <p>Engineers</p>
+                </div>
+                <div class="stat-box-dev">
+                    <h3 class="counter" data-target="12" data-display="12">0</h3>
+                    <p>Years Active</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="sec-header">
+                <span><i class="fa-solid fa-terminal"></i> PROTOCOL</span>
+                <h2>How We Execute</h2>
+            </div>
+            <div class="grid-3">
+                <div class="tech-card" data-aos="fade-up">
+                    <span class="step-number">01</span>
+                    <h3 class="step-heading color-primary">Discovery</h3>
+                    <p class="step-desc">We deconstruct your problem space, audit existing stacks, and architect a
+                        scalable technical roadmap.</p>
+                </div>
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="step-number">02</span>
+                    <h3 class="step-heading color-secondary">Sprint</h3>
+                    <p class="step-desc">Two-week agile sprints with continuous delivery. You see code pushed to staging
+                        every single week.</p>
+                </div>
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="step-number">03</span>
+                    <h3 class="step-heading color-accent">Scale</h3>
+                    <p class="step-desc">Automated CI/CD pipelines, load testing, and production monitoring to ensure
+                        stability at scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-card-section">
+        <div class="container">
+            <div class="flex-between feedback-header-wrapper">
+                <div>
+                    <span class="gradient-text font-code"><i class="fa-solid fa-terminal"></i> FEEDBACK</span>
+                    <h2>Client Signals</h2>
+                </div>
+                <a href="projects.html" class="btn btn-outline">View All Reviews</a>
+            </div>
+
+            <div class="grid-3">
+                <div class="tech-card" data-aos="fade-up">
+                    <div class="stars-container color-primary">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Stackly accelerated our roadmap by 6 months. Their engineering standards
+                        are truly world-class."</p>
+                    <div class="reviewer-profile">
+                        <img src="./assets/person1.webp" class="reviewer-img">
+                        <div>
+                            <h4 class="reviewer-name">David Kim</h4>
+                            <span class="reviewer-role">CTO, FinScale</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stars-container color-primary">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"We migrated to AWS with zero downtime. Their DevOps team is incredibly
+                        thorough."</p>
+                    <div class="reviewer-profile">
+                        <img src="./assets/person2.webp" class="reviewer-img">
+                        <div>
+                            <h4 class="reviewer-name">Sarah J.</h4>
+                            <span class="reviewer-role">VP Eng, HealthPlus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stars-container color-primary">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"They don't just code, they understand product. Best technical partners we've
+                        had."</p>
+                    <div class="reviewer-profile">
+                        <img src="./assets/person3.webp" class="reviewer-img">
+                        <div>
+                            <h4 class="reviewer-name">Marcus Reed</h4>
+                            <span class="reviewer-role">Founder, NeoBank</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up" class="cta-title">Ready to Deploy?</h2>
+            <p data-aos="fade-up" data-aos-delay="100" class="cta-desc">Stop wrestling with legacy code. Let's build a
+                scalable, future-proof product that your users will love.</p>
+            <a href="contact.html" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="200">Initialize Project <i
+                    class="fa-solid fa-rocket"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p class="footer-tagline">Building the digital future, one commit at a time.</p>
+                </div>
+
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Stack</h4>
+                    <ul class="footer-links">
+                        <li><a href="404page.html">React / Next.js</a></li>
+                        <li><a href="404page.html">Node.js / Nest</a></li>
+                        <li><a href="404page.html">Python / Django</a></li>
+                        <li><a href="404page.html">Angular / ASP.NET</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Work</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="500">
+                    <h4>Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="xyz@email.com">
+                        <button class="newsletter-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Stackly. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 50, once: true });
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.8)';
+            }
+        });
+
+        const counters = document.querySelectorAll(".counter");
+        const startCounting = (entries) => {
+            if (!entries[0].isIntersecting) return;
+            counters.forEach(counter => {
+                let target = counter.dataset.target;
+                let displayValue = counter.dataset.display;
+                let numericTarget = parseFloat(target);
+                let count = 0;
+                let step = numericTarget / 150;
+                const update = () => {
+                    if (count < numericTarget) {
+                        count += step;
+                        counter.innerText = Math.floor(count);
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.innerText = displayValue;
+                    }
+                };
+                update();
+            });
+        };
+        const observer = new IntersectionObserver(startCounting, { threshold: 0.4 });
+        counters.forEach(counter => observer.observe(counter));
+
+        const homeDropdownBtn = document.getElementById("homeDropdownBtn");
+        const homeDropdown = document.getElementById("homeDropdown");
+        const icon = document.querySelector(".dropdown-icon");
+
+        if (homeDropdownBtn) {
+            homeDropdownBtn.addEventListener("click", () => {
+                homeDropdown.classList.toggle("show");
+                icon.classList.toggle("rotate");
+            });
+            document.addEventListener("click", (e) => {
+                if (!homeDropdown.contains(e.target) && !homeDropdownBtn.contains(e.target)) {
+                    homeDropdown.classList.remove("show");
+                    icon.classList.remove("rotate");
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

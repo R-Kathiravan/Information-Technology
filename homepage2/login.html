@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth || Information Technology</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body class="dev-theme">
+
+    <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> RETURN_TO_BASE</a>
+
+    <div class="auth-wrapper">
+
+        <div class="text-center mb-4 s-logo" style="margin-bottom: 20px;">
+            <a href="index-2.html" class="logo" style="justify-content: center;">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+            </a>
+        </div>
+
+        <div class="auth-card">
+
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchTab('login')">LOGIN</button>
+                <button class="tab-btn" onclick="switchTab('signup')">REGISTER</button>
+            </div>
+
+            <div id="login-tab" class="form-content active">
+                <div class="auth-header">
+                    <h3 style="margin-bottom: 5px;">Welcome Back</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Enter your credentials to access the
+                        terminal.</p>
+                </div>
+
+                <form id="loginForm" novalidate onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <label>EMAIL ADDRESS</label>
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                        <input type="email" id="loginEmail" class="input-field" placeholder="dev@nexuslabs.dev">
+                        <small class="error-msg">Error message</small>
+                    </div>
+                    <div class="input-group">
+                        <label>PASSWORD</label>
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="loginPass" class="input-field" placeholder="••••••••">
+                        <small class="error-msg">Error message</small>
+                    </div>
+
+                    <div class="form-check">
+                        <label><input type="checkbox"> Remember Node</label>
+                        <!-- <a href="#">Recover Key?</a> -->
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; justify-content: center;">AUTHENTICATE</button>
+                </form>
+            </div>
+
+            <div id="signup-tab" class="form-content">
+                <div class="auth-header">
+                    <h3 style="margin-bottom: 5px;">Initialize Account</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Join the network to start building.</p>
+                </div>
+
+                <form id="signupForm" novalidate onsubmit="handleSignup(event)">
+                    <div class="input-group">
+                        <label>FULL NAME</label>
+                        <i class="fa-solid fa-user input-icon"></i>
+                        <input type="text" id="signupName" class="input-field" placeholder="John Doe">
+                        <small class="error-msg">Error message</small>
+                    </div>
+                    <div class="input-group">
+                        <label>WORK EMAIL</label>
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                        <input type="email" id="signupEmail" class="input-field" placeholder="name@company.com">
+                        <small class="error-msg">Error message</small>
+                    </div>
+                    <div class="input-group">
+                        <label>CREATE PASSWORD</label>
+                        <i class="fa-solid fa-key input-icon"></i>
+                        <input type="password" id="signupPass" class="input-field" placeholder="•••••••• (Min 6 chars)">
+                        <small class="error-msg">Error message</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">CREATE
+                        ID</button>
+                </form>
+            </div>
+
+            <div class="social-divider">
+                <span>OR CONNECT WITH</span>
+            </div>
+
+            <a href="404page.html" class="social-btn">
+                <i class="fa-brands fa-github"></i> Continue with GitHub
+            </a>
+            <a href="404page.html" class="social-btn">
+                <i class="fa-brands fa-google"></i> Continue with Google
+            </a>
+
+        </div>
+
+        <p class="text-center mono-text"
+            style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted); opacity: 0.6;">
+            SECURE CONNECTION :: ENCRYPTED
+        </p>
+
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const loginTab = document.getElementById('login-tab');
+            const signupTab = document.getElementById('signup-tab');
+            const btns = document.querySelectorAll('.tab-btn');
+
+            document.getElementById('loginForm').reset();
+            document.getElementById('signupForm').reset();
+            document.querySelectorAll('.input-group').forEach(el => el.classList.remove('error'));
+            document.querySelectorAll('.input-field').forEach(el => el.classList.remove('error', 'success'));
+
+            btns.forEach(btn => btn.classList.remove('active'));
+
+            if (tab === 'login') {
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+                btns[0].classList.add('active');
+            } else {
+                signupTab.classList.add('active');
+                loginTab.classList.remove('active');
+                btns[1].classList.add('active');
+            }
+        }
+
+        function showError(input, message) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            input.classList.remove('success');
+            input.classList.add('error');
+            formControl.classList.add('error');
+            small.innerText = message;
+        }
+
+        function showSuccess(input) {
+            const formControl = input.parentElement;
+            input.classList.remove('error');
+            input.classList.add('success');
+            formControl.classList.remove('error');
+        }
+
+        function isValidEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail');
+            const pass = document.getElementById('loginPass');
+            let isValid = true;
+
+            if (email.value.trim() === '') {
+                showError(email, 'Email is required');
+                isValid = false;
+            } else if (!isValidEmail(email.value.trim())) {
+                showError(email, 'Invalid email format');
+                isValid = false;
+            } else {
+                showSuccess(email);
+            }
+
+            if (pass.value.trim() === '') {
+                showError(pass, 'Password is required');
+                isValid = false;
+            } else {
+                showSuccess(pass);
+            }
+
+            if (isValid) {
+                const btn = e.target.querySelector('button');
+                btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> AUTHENTICATING...';
+                btn.style.opacity = '0.8';
+                setTimeout(() => {
+                    alert('Login Successful! Redirecting...');
+                    window.location.href = '404page.html';
+                }, 1500);
+            }
+        }
+
+        function handleSignup(e) {
+            e.preventDefault();
+            const name = document.getElementById('signupName');
+            const email = document.getElementById('signupEmail');
+            const pass = document.getElementById('signupPass');
+            let isValid = true;
+
+            if (name.value.trim() === '') {
+                showError(name, 'Full Name is required');
+                isValid = false;
+            } else {
+                showSuccess(name);
+            }
+
+            if (email.value.trim() === '') {
+                showError(email, 'Email is required');
+                isValid = false;
+            } else if (!isValidEmail(email.value.trim())) {
+                showError(email, 'Invalid email format');
+                isValid = false;
+            } else {
+                showSuccess(email);
+            }
+
+            if (pass.value.trim() === '') {
+                showError(pass, 'Password is required');
+                isValid = false;
+            } else if (pass.value.trim().length < 6) {
+                showError(pass, 'Password must be at least 6 chars');
+                isValid = false;
+            } else {
+                showSuccess(pass);
+            }
+
+            if (isValid) {
+                const btn = e.target.querySelector('button');
+                btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> INITIALIZING ID...';
+                btn.style.opacity = '0.8';
+                setTimeout(() => {
+                    alert('Account Created!');
+                    switchTab('login')
+
+                }, 1500);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+ .header-actions {
+     display: flex;
+     gap: 15px;
+     align-items: center;
+ }
+
+ .btn-corporate {
+     font-size: 0.8rem;
+     padding: 10px 20px;
+ }
+
+ .bg-dark-section {
+     background-color: #0b0f19;
+ }
+
+ .bg-card-section {
+     background-color: var(--bg-card);
+ }
+
+ .project-list-layout {
+     display: flex;
+     flex-direction: column;
+     gap: 80px;
+ }
+
+ .work-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 60px;
+     align-items: center;
+ }
+
+ .work-img-style {
+     border-radius: 8px;
+     border: 1px solid var(--border);
+     opacity: 0.8;
+ }
+
+ .code-badge-mb {
+     margin-bottom: 15px;
+ }
+
+ .project-title {
+     font-size: 2.5rem;
+     margin-bottom: 20px;
+ }
+
+ .project-desc {
+     color: var(--text-muted);
+     font-size: 1.1rem;
+     margin-bottom: 30px;
+ }
+
+ .text-highlight {
+     color: var(--primary);
+     font-weight: 700;
+ }
+
+ .project-link {
+     color: var(--text-main);
+     border-bottom: 1px solid var(--primary);
+     padding-bottom: 5px;
+     transition: 0.3s;
+ }
+
+ .project-link:hover {
+     color: var(--primary);
+ }
+
+ .text-right-aligned {
+     text-align: right;
+ }
+
+ .order-last {
+     order: 2;
+ }
+
+ .step-number {
+     font-size: 3rem;
+     font-weight: 700;
+     color: rgba(255, 255, 255, 0.1);
+     display: block;
+     margin-bottom: 0px;
+ }
+
+ .step-heading {
+     margin-bottom: 10px;
+ }
+
+ .color-primary {
+     color: var(--primary);
+ }
+
+ .color-secondary {
+     color: var(--secondary);
+ }
+
+ .color-accent {
+     color: #61dbfb;
+ }
+
+ .step-desc {
+     color: var(--text-muted);
+ }
+
+ .feedback-header-wrapper {
+     margin-bottom: 50px;
+     flex-wrap: wrap;
+ }
+
+ .stars-container {
+     margin-bottom: 20px;
+     font-size: 0.9rem;
+ }
+
+ .review-text {
+     font-size: 1.1rem;
+     color: var(--text-main);
+     margin-bottom: 20px;
+ }
+
+ .reviewer-profile {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+ }
+
+ .reviewer-img {
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     object-fit: cover;
+ }
+
+ .reviewer-name {
+     font-size: 0.9rem;
+     margin: 0;
+ }
+
+ .reviewer-role {
+     font-size: 0.75rem;
+     color: var(--text-muted);
+     font-family: var(--font-code);
+ }
+
+ .cta-section {
+     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+         url('./assets/home-cta.webp');
+     background-size: cover;
+     background-attachment: fixed;
+     text-align: center;
+ }
+
+ .cta-title {
+     font-size: 3.5rem;
+     margin-bottom: 20px;
+ }
+
+ .cta-desc {
+     color: var(--text-muted);
+     font-size: 1.2rem;
+     max-width: 600px;
+     margin: 0 auto 40px;
+ }
+
+ .footer-tagline {
+     margin-top: 20px;
+ }
+
+ @media (max-width: 992px) {
+     .work-grid {
+         grid-template-columns: 1fr;
+         gap: 40px;
+     }
+
+     .text-right-aligned {
+         text-align: left;
+     }
+
+     .order-last {
+         order: unset;
+     }
+
+     .cta-title {
+         font-size: 2.5rem;
+     }
+ }
