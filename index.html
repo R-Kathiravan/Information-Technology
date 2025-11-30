@@ -79,7 +79,10 @@
 
             <div style="display: flex; gap: 20px;" data-aos="fade-up" data-aos-delay="200">
                 <a href="case-studies.html" class="btn">Discover More</a>
-                <a href="404page.html" class="btn btn-white"><i class="fa-solid fa-play"></i> Watch Video</a>
+                <!-- Find this line in your Hero Section -->
+                <a href="javascript:void(0)" class="btn btn-white" onclick="openVideo()">
+                    <i class="fa-solid fa-play"></i> Watch Video
+                </a>
             </div>
 
             <div class="brand-strip" data-aos="fade-up" data-aos-delay="300">
@@ -445,7 +448,14 @@
             © 2025 Stackly IT Solutions. All Rights Reserved.
         </div>
     </footer>
-
+    <div id="videoModal" class="video-modal" onclick="closeVideo()">
+        <div class="video-container">
+            <span class="close-video" onclick="closeVideo()">&times;</span>
+            <iframe id="youtubeFrame" width="100%" height="100%" src="" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -467,7 +477,7 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.directionX = (Math.random() * 0.4) - 0.2;  
+                this.directionX = (Math.random() * 0.4) - 0.2;
                 this.directionY = (Math.random() * 0.4) - 0.2;
                 this.size = Math.random() * 3 + 1;
                 this.color = '#3C72FC';
@@ -532,6 +542,26 @@
             canvas.height = window.innerHeight;
             init();
         });
+
+        const videoUrl = "https://www.youtube.com/embed/Vgde53kf2pQ?autoplay=1";
+
+        function openVideo() {
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('youtubeFrame');
+
+            // Set source only when opening (prevents background playing)
+            frame.src = videoUrl;
+            modal.classList.add('active');
+        }
+
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('youtubeFrame');
+
+            // Remove source to stop audio
+            frame.src = "";
+            modal.classList.remove('active');
+        }
         const homeDropdownBtn = document.getElementById("homeDropdownBtn");
         const homeDropdown = document.getElementById("homeDropdown");
         const icon = document.querySelector(".dropdown-icon");
