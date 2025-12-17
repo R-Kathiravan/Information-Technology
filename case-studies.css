@@ -40,11 +40,13 @@
     opacity: 1;
     transform: translateY(0);
 }
- @media (max-width:768px) {
-    .project-item .project-overlay{
+
+@media (max-width:768px) {
+    .project-item .project-overlay {
         opacity: 1;
     }
- }
+}
+
 .project-cat {
     color: var(--accent);
     font-weight: 700;
@@ -109,24 +111,25 @@
     line-height: 1;
 }
 
-.sub-title {
-    display: inline-block;
-    padding: 8px 16px;
-    background: rgba(60, 114, 252, 0.1);
-    color: var(--primary);
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
 .quote-box {
     background: var(--light-bg);
     padding: 30px;
     border-left: 5px solid var(--primary);
     margin-top: 30px;
     border-radius: 0 10px 10px 0;
+}
+
+.workflow {
+    background-color: var(--bg-base);
+    background-image:
+        radial-gradient(at 20% 20%, var(--mesh-1), transparent 50%),
+        radial-gradient(at 80% 30%, var(--mesh-2), transparent 55%),
+        radial-gradient(at 40% 80%, var(--mesh-3), transparent 50%);
+    background-attachment: fixed !important;
+}
+
+.workflow h2 {
+    color: white;
 }
 
 .process-wrapper {
@@ -136,6 +139,10 @@
     text-align: center;
     position: relative;
     margin-top: 50px;
+}
+
+.process-wrapper h3 {
+    color: white;
 }
 
 .process-item {

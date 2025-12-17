@@ -36,7 +36,7 @@
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
                     <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
                     <a href="login.html" class="btn mobile-login">Login <i class="fa-solid fa-arrow-right"></i></a>
                     <div class="btn-close"><span class="material-icons">close</span></div>
@@ -82,10 +82,10 @@
         </div>
     </section>
 
-    <section class="section-padding" style="background: var(--light-bg);">
+    <section class="section-padding location">
         <div class="container">
             <div class="sec-header">
-                <span>Our Reach</span>
+                <span class="sub-title">Our Reach</span>
                 <h2>Our Global Locations</h2>
             </div>
             <div class="locations-grid">
@@ -184,7 +184,7 @@
         </div>
     </section>
 
-    <section class="section-padding" style="background: var(--secondary); color: white;">
+    <section class="section-padding cta" style="color: white;">
         <div class="container">
             <div class="routing-wrapper">
                 <div class="routing-card" data-aos="fade-up">
@@ -272,15 +272,13 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, offset: 50 });
+        AOS.init({ duration: 800, offset: 50,once:true });
 
-        // Sticky Header
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // --- FORM VALIDATION SCRIPT ---
         const form = document.getElementById('contactForm');
         const name = document.getElementById('name');
         const email = document.getElementById('email');
@@ -288,19 +286,17 @@
         const message = document.getElementById('message');
 
         form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent form submission
+            e.preventDefault();
             checkInputs();
         });
 
         function checkInputs() {
-            // Get values
             const nameValue = name.value.trim();
             const emailValue = email.value.trim();
             const phoneValue = phone.value.trim();
             const messageValue = message.value.trim();
             let isValid = true;
 
-            // Check Name
             if (nameValue === '') {
                 setError(name, 'Name cannot be blank');
                 isValid = false;
@@ -308,7 +304,6 @@
                 setSuccess(name);
             }
 
-            // Check Email
             if (emailValue === '') {
                 setError(email, 'Email cannot be blank');
                 isValid = false;
@@ -319,7 +314,6 @@
                 setSuccess(email);
             }
 
-            // Check Phone
             if (phoneValue === '') {
                 setError(phone, 'Phone cannot be blank');
                 isValid = false;
@@ -327,7 +321,6 @@
                 setSuccess(phone);
             }
 
-            // Check Message
             if (messageValue === '') {
                 setError(message, 'Message cannot be blank');
                 isValid = false;
@@ -336,10 +329,8 @@
             }
 
             if (isValid) {
-                // Here you would typically send data to backend
                 alert("Form Submitted Successfully!");
                 form.reset();
-                // Reset styling
                 const formControls = document.querySelectorAll('.form-control');
                 formControls.forEach(ctrl => ctrl.classList.remove('success'));
             }

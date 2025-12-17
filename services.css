@@ -106,6 +106,18 @@
     border-color: var(--white);
 }
 
+.pricing {
+    background-color: var(--bg-base);
+    background-image:
+        radial-gradient(at 20% 20%, var(--mesh-1), transparent 50%),
+        radial-gradient(at 80% 30%, var(--mesh-2), transparent 55%),
+        radial-gradient(at 40% 80%, var(--mesh-3), transparent 50%);
+    background-attachment: fixed !important;
+}
+.pricing h2{
+    color: white;
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -114,7 +126,7 @@
 }
 
 .pricing-card {
-    background: var(--white);
+    background: white;
     padding: 40px;
     border-radius: 15px;
     border: 1px solid var(--border);

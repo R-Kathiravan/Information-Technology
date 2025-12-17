@@ -33,7 +33,7 @@
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
                     <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
@@ -60,7 +60,7 @@
     <section class="section-padding" style="background: var(--light-bg);">
         <div class="container">
             <div class="sec-header">
-                <span>What We Offer</span>
+                <span class="sub-title">What We Offer</span>
                 <h2>High Quality IT Services</h2>
             </div>
 
@@ -118,10 +118,10 @@
         </div>
     </section>
 
-    <section class="section-padding">
+    <section class="section-padding pricing">
         <div class="container">
             <div class="sec-header">
-                <span>Pricing Plans</span>
+                <span class="sub-title">Pricing Plans</span>
                 <h2>Flexible Plans for Everyone</h2>
             </div>
 
@@ -196,7 +196,7 @@
     <section class="section-padding" style="background: var(--light-bg);">
         <div class="container">
             <div class="sec-header">
-                <span>FAQ</span>
+                <span class="sub-title">FAQ</span>
                 <h2>Frequently Asked Questions</h2>
             </div>
             <div class="faq-grid">
@@ -316,7 +316,7 @@
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, offset: 50 });
+        AOS.init({ duration: 800, offset: 50,once:true });
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);

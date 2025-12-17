@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: -50px;
+    margin-top: 50px;
     position: relative;
     z-index: 5;
 }
@@ -52,6 +52,19 @@
     line-height: 1.6;
 }
 
+.location {
+    background-color: var(--bg-base);
+    background-image:
+        radial-gradient(at 20% 20%, var(--mesh-1), transparent 50%),
+        radial-gradient(at 80% 30%, var(--mesh-2), transparent 55%),
+        radial-gradient(at 40% 80%, var(--mesh-3), transparent 50%);
+    background-attachment: fixed !important;
+}
+
+.location h2 {
+    color: white;
+}
+
 .locations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -60,7 +73,8 @@
 }
 
 .location-card {
-    background: var(--white);
+    background: transparent;
+    background-attachment: fixed;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -86,10 +100,11 @@
 .loc-content h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
+    color: white;
 }
 
 .loc-content p {
-    color: var(--text-body);
+    color: #adadad;
     margin-bottom: 15px;
     font-size: 0.95rem;
 }
@@ -280,4 +295,13 @@ textarea.form-control {
 
 .form-row {
     align-items: flex-start;
+}
+
+.cta {
+    background-color: var(--bg-base);
+    background-image:
+        radial-gradient(at 20% 20%, var(--mesh-1), transparent 50%),
+        radial-gradient(at 80% 30%, var(--mesh-2), transparent 55%),
+        radial-gradient(at 40% 80%, var(--mesh-3), transparent 50%);
+    background-attachment: fixed !important;
 }

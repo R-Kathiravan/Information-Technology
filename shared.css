@@ -10,6 +10,13 @@
      --border: #E2E8F0;
      --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+     --bg-base: #0b0f1a;
+     --mesh-1: rgba(99, 102, 241, 0.28);
+     --mesh-2: rgba(14, 165, 233, 0.24);
+     --mesh-3: rgba(168, 85, 247, 0.22);
+     --font-heading: 'Plus Jakarta Sans', sans-serif;
+     --font-body: 'Inter', sans-serif;
+     --font-tech: 'JetBrains Mono', monospace;
  }
 
  * {
@@ -20,12 +27,29 @@
 
  html {
      scroll-behavior: smooth;
-     scrollbar-width: none;
+     /* scrollbar-width: none; */
      -ms-overflow-style: none;
  }
 
+ ::-webkit-scrollbar {
+     width: 8px;
+ }
+
+ ::-webkit-scrollbar-track {
+     /* background: #3c72fc9e; */
+ }
+
+ ::-webkit-scrollbar-thumb {
+     background: var(--primary-dark);
+     border-radius: 4px;
+ }
+
+ ::-webkit-scrollbar-thumb:hover {
+     background: var(--primary);
+ }
+
  body {
-     font-family: 'Manrope', sans-serif;
+     font-family: var(--font-body);
      color: var(--text-body);
      background: var(--white);
      line-height: 1.6;
@@ -39,7 +63,7 @@
  h5,
  h6 {
      color: var(--text-heading);
-     font-family: 'Manrope', sans-serif;
+     font-family: var(--font-heading);
      font-weight: 800;
      line-height: 1.2;
  }
@@ -85,6 +109,7 @@
      text-align: center;
  }
 
+ /* 
  .sec-header span {
      color: var(--primary);
      font-weight: 700;
@@ -93,10 +118,24 @@
      font-size: 0.9rem;
      display: block;
      margin-bottom: 10px;
- }
+ } */
 
  .sec-header h2 {
      font-size: 2.8rem;
+ }
+
+ .sub-title {
+     font-family: var(--font-tech);
+     font-size: 0.85rem;
+     color: var(--primary);
+     text-transform: uppercase;
+     letter-spacing: 0.1em;
+     display: inline-block;
+     margin-bottom: 16px;
+     background: rgba(37, 99, 235, 0.1);
+     padding: 6px 12px;
+     border-radius: 4px;
+     border: 1px solid rgba(37, 99, 235, 0.2);
  }
 
  .btn {
@@ -165,6 +204,7 @@
      color: rgba(255, 255, 255, 0.8);
      font-size: 1rem;
      position: relative;
+     font-family: var(--font-heading);
  }
 
  .nav-link::after {
@@ -180,6 +220,14 @@
 
  .nav-link:hover {
      color: var(--white);
+ }
+
+ .nav-menu .active {
+     color: var(--white) !important;
+ }
+
+ header.scrolled .active {
+     color: var(--primary) !important;
  }
 
  .nav-link:hover::after {
@@ -371,7 +419,12 @@
 
 
  .contact-cta {
-     background: var(--light-bg);
+     background-color: var(--bg-base);
+     background-image:
+         radial-gradient(at 20% 20%, var(--mesh-1), transparent 50%),
+         radial-gradient(at 80% 30%, var(--mesh-2), transparent 55%),
+         radial-gradient(at 40% 80%, var(--mesh-3), transparent 50%);
+     background-attachment: fixed !important;
  }
 
  .cta-box {

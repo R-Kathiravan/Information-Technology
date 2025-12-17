@@ -10,6 +10,28 @@
      --border: #E2E8F0;
      --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+     --font-heading: 'Plus Jakarta Sans', sans-serif;
+     --font-body: 'Inter', sans-serif;
+     --font-tech: 'JetBrains Mono', monospace;
+     --border-dark: rgba(255, 255, 255, 0.1);
+     --border-light: #E2E8F0;
+ }
+
+ ::-webkit-scrollbar {
+     width: 8px;
+ }
+
+ ::-webkit-scrollbar-track {
+     /* background: #3c72fc9e; */
+ }
+
+ ::-webkit-scrollbar-thumb {
+     background: var(--primary-dark);
+     border-radius: 4px;
+ }
+
+ ::-webkit-scrollbar-thumb:hover {
+     background: var(--primary);
  }
 
  * {
@@ -20,12 +42,20 @@
 
  html {
      scroll-behavior: smooth;
-     scrollbar-width: none;
+     /* scrollbar-width: none; */
      -ms-overflow-style: none;
  }
 
+ :root {
+     --bg-base: #0b0f1a;
+     --mesh-1: rgba(99, 102, 241, 0.28);
+     --mesh-2: rgba(14, 165, 233, 0.24);
+     --mesh-3: rgba(168, 85, 247, 0.22);
+ }
+
+
  body {
-     font-family: 'Manrope', sans-serif;
+     font-family: var(--font-body);
      color: var(--text-body);
      background: var(--white);
      line-height: 1.6;
@@ -39,7 +69,7 @@
  h5,
  h6 {
      color: var(--text-heading);
-     font-family: 'Manrope', sans-serif;
+     font-family: var(--font-heading);
      font-weight: 800;
      line-height: 1.2;
  }
@@ -82,16 +112,6 @@
  .sec-header {
      margin-bottom: 60px;
      text-align: center;
- }
-
- .sec-header span {
-     color: var(--primary);
-     font-weight: 700;
-     letter-spacing: 2px;
-     text-transform: uppercase;
-     font-size: 0.9rem;
-     display: block;
-     margin-bottom: 10px;
  }
 
  .sec-header h2 {
@@ -158,6 +178,7 @@
      color: rgba(255, 255, 255, 0.8);
      font-size: 1rem;
      position: relative;
+     font-family: var(--font-heading);
  }
 
  .nav-link::after {
@@ -173,6 +194,14 @@
 
  .nav-link:hover {
      color: var(--white);
+ }
+
+ .home-nav .active {
+     color: var(--white) !important;
+ }
+
+ header.scrolled .active {
+     color: var(--primary) !important;
  }
 
  .nav-link:hover::after {
@@ -443,6 +472,9 @@
      font-size: 5rem;
      margin-bottom: 30px;
      color: white;
+     background: linear-gradient(to right, #fff, #94a3b8);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
      line-height: 1.1;
  }
 
@@ -497,9 +529,6 @@
      }
  }
 
- /* =========================================
-   VIDEO MODAL STYLES
-   ========================================= */
  .video-modal {
      position: fixed;
      top: 0;
@@ -552,11 +581,9 @@
 
  .close-video:hover {
      color: var(--primary);
-     /* Or #3C72FC if variable not set */
      transform: rotate(90deg);
  }
 
- /* Mobile Adjustment */
  @media (max-width: 768px) {
      .video-container {
          width: 95%;
@@ -582,7 +609,7 @@
 
  .brand-strip img {
      height: 30px;
-     filter: grayscale(1) brightness(10);
+     filter: grayscale(.6);
      transition: 0.3s;
  }
 
@@ -613,6 +640,7 @@
      display: flex;
      align-items: center;
      gap: 20px;
+     transition: 0.3s all ease-in;
  }
 
  .marquee-item span {
@@ -633,7 +661,7 @@
  }
 
  .marquee-item:hover {
-     color: rgb(12, 8, 255);
+     color: rgb(255, 255, 255);
      -webkit-text-stroke: 0;
  }
 
@@ -649,7 +677,6 @@
  }
 
  .about {
-     background: var(--white);
      overflow: hidden;
  }
 
@@ -699,15 +726,17 @@
  }
 
  .sub-title {
-     display: inline-block;
-     padding: 8px 16px;
-     background: rgba(60, 114, 252, 0.1);
-     color: var(--primary);
-     border-radius: 30px;
-     font-weight: 700;
+     font-family: var(--font-tech);
      font-size: 0.85rem;
+     color: var(--primary);
      text-transform: uppercase;
-     margin-bottom: 20px;
+     letter-spacing: 0.1em;
+     display: inline-block;
+     margin-bottom: 16px;
+     background: rgba(37, 99, 235, 0.1);
+     padding: 6px 12px;
+     border-radius: 4px;
+     border: 1px solid rgba(37, 99, 235, 0.2);
  }
 
  .quote-box {
@@ -719,7 +748,16 @@
  }
 
  .services {
-     background: var(--light-bg);
+     background-color: var(--bg-base);
+     background-image:
+         radial-gradient(at 20% 20%, var(--mesh-1), transparent 50%),
+         radial-gradient(at 80% 30%, var(--mesh-2), transparent 55%),
+         radial-gradient(at 40% 80%, var(--mesh-3), transparent 50%);
+     background-attachment: fixed;
+ }
+
+ .services h2 {
+     color: white !important;
  }
 
  .service-grid {
@@ -729,102 +767,69 @@
  }
 
  .service-card {
-     background: var(--white);
-     padding: 40px;
-     border-radius: 15px;
+     background: rgba(255, 255, 255, 0.02);
+     border: 1px solid var(--border-dark);
+     padding: 40px 30px;
+     border-radius: 4px;
      position: relative;
-     overflow: hidden;
      transition: var(--transition);
-     border: 1px solid var(--border);
-     z-index: 1;
- }
-
- .service-card::before {
-     content: '';
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-     height: 0;
-     background: var(--primary);
-     transition: 0.5s;
-     z-index: -1;
  }
 
  .service-card:hover {
-     transform: translateY(-10px);
      border-color: var(--primary);
-     box-shadow: 0 20px 40px rgba(60, 114, 252, 0.2);
- }
-
- .service-card:hover::before {
-     height: 100%;
- }
-
- .service-card:hover h3,
- .service-card:hover p,
- .service-card:hover .read-more {
-     color: var(--white);
+     background: rgba(37, 99, 235, 0.05);
+     transform: translateY(-5px);
  }
 
  .card-num {
+     font-family: var(--font-tech);
+     color: rgba(255, 255, 255, 0.1);
+     font-size: 3rem;
      position: absolute;
      top: 20px;
      right: 20px;
-     font-size: 4rem;
-     font-weight: 900;
-     color: #F1F5F9;
-     line-height: 1;
-     transition: 0.4s;
-     z-index: -1;
- }
-
- .service-card:hover .card-num {
-     color: rgba(255, 255, 255, 0.1);
+     font-weight: 700;
  }
 
  .service-icon {
-     width: 70px;
-     height: 70px;
-     background: #EEF4FF;
-     border-radius: 50%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     font-size: 1.8rem;
+     font-size: 2rem;
      color: var(--primary);
-     margin-bottom: 25px;
-     transition: 0.4s;
- }
-
- .service-card:hover .service-icon {
-     background: var(--white);
-     color: var(--primary);
+     margin-bottom: 20px;
+     width: auto;
+     height: auto;
+     background: none;
+     /* Reset old styles */
  }
 
  .service-card h3 {
-     font-size: 1.5rem;
-     margin-bottom: 15px;
+     color: white;
+     margin-bottom: 10px;
+ }
+
+ .service-card p {
+     color: var(--text-muted);
+     font-size: 0.95rem;
  }
 
  .read-more {
-     display: inline-flex;
-     margin-top: 15px;
-     width: 45px;
-     height: 45px;
-     border: 1px solid var(--border);
-     border-radius: 50%;
+     margin-top: 20px;
+     color: var(--primary);
+     font-family: var(--font-tech);
+     font-size: 0.8rem;
+     display: flex;
      align-items: center;
-     justify-content: center;
-     color: var(--text-heading);
-     transition: 0.4s;
+     gap: 8px;
+     border: none;
+     width: auto;
+     height: auto;
+     border-radius: 0;
  }
 
- .service-card:hover .read-more {
-     background: var(--white);
-     color: var(--primary);
-     border-color: var(--white);
+ .read-more:hover {
+     background: none;
+     color: white;
  }
+
 
  .project-grid {
      display: grid;
@@ -890,22 +895,37 @@
  }
 
  .process-sec {
-     background: white;
+     background-color: var(--bg-base);
+     background-image:
+         radial-gradient(at 20% 20%, var(--mesh-1), transparent 50%),
+         radial-gradient(at 80% 30%, var(--mesh-2), transparent 55%),
+         radial-gradient(at 40% 80%, var(--mesh-3), transparent 50%);
+     background-attachment: fixed;
+ }
+
+ .process-sec h2 {
+     color: white;
  }
 
  .process-card {
      text-align: center;
      padding: 30px;
      position: relative;
+     background-color: rgba(255, 255, 255, 0.014);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.237);
  }
 
  .step-num {
      font-size: 4rem;
      font-weight: 800;
-     color: rgba(0, 0, 0, 0.05);
+     color: rgba(161, 156, 156, 0.208);
      position: absolute;
      top: 0;
      right: 20px;
+ }
+
+ .process-card h3 {
+     color: white;
  }
 
  .process-icon {
@@ -959,6 +979,10 @@
      gap: 15px;
  }
 
+ .client-info h4 {
+     color: white;
+ }
+
  .client-img {
      width: 50px;
      height: 50px;
@@ -985,7 +1009,12 @@
 
  .team-img {
      width: 100%;
+     filter: grayscale(100%);
      transition: 0.5s;
+ }
+
+ .team-img:hover {
+     filter: grayscale(0);
  }
 
  .social-overlay {
@@ -1031,7 +1060,12 @@
  }
 
  .contact-cta {
-     background: var(--light-bg);
+     background-color: var(--bg-base);
+     background-image:
+         radial-gradient(at 20% 20%, var(--mesh-1), transparent 50%),
+         radial-gradient(at 80% 30%, var(--mesh-2), transparent 55%),
+         radial-gradient(at 40% 80%, var(--mesh-3), transparent 50%);
+     background-attachment: fixed !important;
  }
 
  .cta-box {
